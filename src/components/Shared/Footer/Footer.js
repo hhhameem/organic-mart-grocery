@@ -67,7 +67,7 @@ const Footer = () => {
             </li>
             <li className="text-start">
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              organicnart@gmail.com
+              organicmart@gmail.com
             </li>
           </ul>
 
