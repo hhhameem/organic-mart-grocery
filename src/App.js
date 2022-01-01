@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Shared/Footer/Footer";
 import Home from "./components/Home/Home/Home";
 import Contactus from "./components/Home/Contactus/Contactus";
+import Support from "./components/Home/Support/Support";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<Home/>}></Route>
           <Route exact path="/footer" element={<Footer />} />
           <Route  path ="/contactus" element={<Contactus />} />
+          <Route  path ="/support" element={<Support />} />
         </Routes>
        
       </BrowserRouter>
