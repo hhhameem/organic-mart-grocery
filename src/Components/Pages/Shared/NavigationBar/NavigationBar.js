@@ -11,7 +11,7 @@ const NavigationBar = () => {
                     <Navbar.Brand href="#home" className="nav-logo"><img src="https://franchiseindia.s3.ap-south-1.amazonaws.com/uploads/content/fi/art/organic-food-on-board-fb-55662cbc11.jpg" className="w-100 rounded-circle" alt="" /></Navbar.Brand>
                     <Navbar.Brand href="#home" className="text-warning">Organic-Mart-Grocery</Navbar.Brand>
                     <Navbar.Toggle />
-                    <Navbar.Collapse className="justify-content-end">
+                    <Navbar.Collapse className="justify-content-end hover">
 
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
