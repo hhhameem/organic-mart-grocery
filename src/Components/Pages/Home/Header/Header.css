@@ -1,0 +1,17 @@
+.banner{
+    background-image: url('https://cdn.britannica.com/16/203316-050-822EE04E/food-carbohydrates.jpg');
+    height:75vh;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.heading{
+   padding-top: 7%;
+   /* color:rgba(63, 8, 11, 0.931); */
+   font-size: 50px;
+   font-style: italic;
+   font-weight:900;
+}
+
+/* https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/gettyimages-742168705.jpg?itok=uvwCldu8 */
