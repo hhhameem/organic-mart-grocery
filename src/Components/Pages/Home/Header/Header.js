@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
-
+        <div className="">
+            <h1>Enjoy Organic Grocery With The Best Quality</h1>
         </div>
     );
 };
