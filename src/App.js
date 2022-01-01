@@ -2,7 +2,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Shared/Footer/Footer";
-import Home from "./components/Home/Home";
+import Home from "./components/Home/Home/Home";
+import Contactus from "./components/Home/Contactus/Contactus";
+
 function App() {
   return (
     <div className="App">
@@ -22,8 +24,9 @@ function App() {
       </header> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home/>}></Route>
           <Route exact path="/footer" element={<Footer />} />
+          <Route  path ="/contactus" element={<Contactus />} />
         </Routes>
        
       </BrowserRouter>
