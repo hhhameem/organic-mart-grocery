@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <div class="footer">
       <div class="inner-footer">
-        {/* <!--  for company name and description --> */}
         <div class="footer-items">
           <h2 className="text-start">Organic Mart & Grocery</h2>
           <p>
