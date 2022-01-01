@@ -49,7 +49,7 @@ const Footer = () => {
               <li className="text-start">Terms & Conditions</li>
             </a>
             <a href="/">
-              <li className="text-start">Italian</li>
+              <li className="text-start">Checkout</li>
             </a>
           </ul>
         </div>
