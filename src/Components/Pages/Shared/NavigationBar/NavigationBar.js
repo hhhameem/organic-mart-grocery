@@ -16,8 +16,8 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
                         <p><i className="fas fa-cart-arrow-down mt-3 text-secondary"></i></p>
-                        {/* <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
-                        <Nav.Link as={Link} to="/login">Login</Nav.Link> */}
+                        {/* <Nav.Link as={Link} to="/logout">Logout</Nav.Link> */}
+                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

@@ -1,0 +1,20 @@
+.about-image{
+    background-image: url('https://i.pinimg.com/736x/1e/8c/34/1e8c3459012e86463e858d7e55d3b21f.jpg');
+    height:75vh;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.about-image a{
+    text-decoration: none;
+    font-size: 45px;
+    font-weight:900;
+    color: rgb(173, 248, 170);
+}
+.about-heading{
+    padding-top: 7%;
+    font-size: 70px;
+    font-weight:900;
+    color: moccasin;
+ }
