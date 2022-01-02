@@ -25,12 +25,12 @@ const Categories = () => {
             title: "Fresh Foods",
         },
         {
-            id: 4,
+            id: 5,
             img: "https://static.thenounproject.com/png/1586100-200.png",
             title: "Fresh Foods",
         },
         {
-            id: 4,
+            id: 6,
             img: "https://static.thenounproject.com/png/1586100-200.png",
             title: "Fresh Foods",
         },
