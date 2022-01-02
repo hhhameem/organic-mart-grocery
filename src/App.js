@@ -10,6 +10,7 @@ import Product from "./components/Home/Product/Product";
 import AddProduct from "./components/Home/AddProduct/AddProduct";
 import MakeAdmin from "./components/Home/MakeAdmin/MakeAdmin";
 import UserReview from "./components/Home/UserReview/UserReview";
+import Cart from "./components/Home/Cart/Cart";
 
 function App() {
   return (
@@ -30,20 +31,20 @@ function App() {
       </header> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/home" element={<Home/>}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/home" element={<Home />}></Route>
           <Route exact path="/footer" element={<Footer />} />
-          <Route  path ="/contactus" element={<Contactus />} />
-          <Route  path ="/support" element={<Support />} />
-          <Route  path ="/product" element={<Product />} />
-          <Route  path ="/addproduct" element={<AddProduct />} />
-          <Route  path ="/makeadmin" element={<MakeAdmin />} />
-          <Route  path ="/review" element={<UserReview />} />
-         
-        
-          <Route  path ="*" element={<Error />} />
+          <Route path="/contactus" element={<Contactus />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/makeadmin" element={<MakeAdmin />} />
+          <Route path="/review" element={<UserReview />} />
+
+          <Route path="/cart" element={<Cart />} />
+
+          <Route path="*" element={<Error />} />
         </Routes>
-       
       </BrowserRouter>
       ,
     </div>
