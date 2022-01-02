@@ -6,6 +6,7 @@ import Home from "./components/Home/Home/Home";
 import Contactus from "./components/Home/Contactus/Contactus";
 import Support from "./components/Home/Support/Support";
 import Error from "./components/Shared/Error/Error";
+import Product from "./components/Home/Product/Product";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/footer" element={<Footer />} />
           <Route  path ="/contactus" element={<Contactus />} />
           <Route  path ="/support" element={<Support />} />
+          <Route  path ="/product" element={<Product />} />
           <Route  path ="*" element={<Error />} />
         </Routes>
        

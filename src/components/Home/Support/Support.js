@@ -2,7 +2,7 @@ import React from "react";
 import "./Support.css";
 const Support = () => {
   return (
-    <div className="container p-3">
+    <div className="containerSupport p-3">
       <div className="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
         <div className="col">
           <div className="card h-100 shadow-sm">
@@ -15,7 +15,6 @@ const Support = () => {
                 />
               </div>
             </div>
-
             <div className="card-body">
               <div className="clearfix mb-3"></div>
 
@@ -41,7 +40,6 @@ const Support = () => {
                 />
               </div>
             </div>
-
             <div className="card-body">
               <div className="clearfix mb-3"></div>
 
@@ -93,10 +91,8 @@ const Support = () => {
                 />
               </div>
             </div>
-
             <div className="card-body">
               <div className="clearfix mb-3"></div>
-
               <div className="my-2 text-center">
                 <h1>100% Secure Payment</h1>
               </div>

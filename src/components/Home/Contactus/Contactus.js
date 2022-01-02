@@ -61,9 +61,9 @@ const Contactus = () => {
           </div>
           <div class="row">
             <div class="col-md-12">
-              <h4 className="mt-3 fw-bold">
+              <h1 className="mt-3 fw-bold">
                 NICE PROJECT? GET IN TOUCH! <br /> WILL CONTACT YOU SOON
-              </h4>
+              </h1>
               <div class="contact-page-form" method="post">
                 <h2 className="text-start">Get in Touch</h2>
                 <p className="text-start">
