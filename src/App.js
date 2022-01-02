@@ -7,6 +7,9 @@ import Contactus from "./components/Home/Contactus/Contactus";
 import Support from "./components/Home/Support/Support";
 import Error from "./components/Shared/Error/Error";
 import Product from "./components/Home/Product/Product";
+import AddProduct from "./components/Home/AddProduct/AddProduct";
+import MakeAdmin from "./components/Home/MakeAdmin/MakeAdmin";
+import UserReview from "./components/Home/UserReview/UserReview";
 
 function App() {
   return (
@@ -33,6 +36,11 @@ function App() {
           <Route  path ="/contactus" element={<Contactus />} />
           <Route  path ="/support" element={<Support />} />
           <Route  path ="/product" element={<Product />} />
+          <Route  path ="/addproduct" element={<AddProduct />} />
+          <Route  path ="/makeadmin" element={<MakeAdmin />} />
+          <Route  path ="/review" element={<UserReview />} />
+         
+        
           <Route  path ="*" element={<Error />} />
         </Routes>
        
