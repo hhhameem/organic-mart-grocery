@@ -1,0 +1,8 @@
+.loginBackground{
+    background-image: url('https://www.sony.com.ph/image/170ee7cea3dc5922006bdfb5ec3ee69b?fmt=jpeg&wid=800&qlt=43');
+    height:100vh;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}

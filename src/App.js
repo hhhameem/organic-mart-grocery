@@ -15,6 +15,30 @@ import Cart from "./components/Home/Cart/Cart";
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Registration />} />
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/home" element={<Home />}></Route>
+            <Route exact path="/footer" element={<Footer />} />
+            <Route path="/contactus" element={<Contactus />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/addproduct" element={<AddProduct />} />
+            <Route path="/makeadmin" element={<MakeAdmin />} />
+            <Route path="/review" element={<UserReview />} />
+
+          <Route path="/cart" element={<Cart />} />
+
+          <Route path="*" element={<Error />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -29,24 +53,6 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-          <Route exact path="/footer" element={<Footer />} />
-          <Route path="/contactus" element={<Contactus />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/addproduct" element={<AddProduct />} />
-          <Route path="/makeadmin" element={<MakeAdmin />} />
-          <Route path="/review" element={<UserReview />} />
-
-          <Route path="/cart" element={<Cart />} />
-
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter>
-      ,
     </div>
   );
 }
