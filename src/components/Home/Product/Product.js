@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
-import "./Product.css"
+import "./Product.css";
 const Product = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('./product.json')
+    fetch("https://sheltered-caverns-74517.herokuapp.com/product")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div id="prducts">
-      <h1 className=" mt-2 text-center title">Organic Mart & Grocery</h1>
+    <div id='prducts'>
+      <h1 className=' mt-2 text-center title'>Organic Mart & Grocery</h1>
 
-      <div className="products-details mt-3">
+      <div className='products-details mt-3'>
         {products.map((product) => (
           <ProductCard product={product} key={product._id}></ProductCard>
         ))}
