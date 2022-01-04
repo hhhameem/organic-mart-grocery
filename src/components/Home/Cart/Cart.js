@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { getTotal } from '../../../redux/cartSlice';
+import { addNewOrder } from '../../../redux/ordersSlice';
 import "./Cart.css";
+import SingleCartProduct from './SingleCartProduct';
 const Cart = () => {
+  const dispatch = useDispatch()
+  const cart = useSelector((state) => state.cart.cart)
+  const cartTotal = useSelector(state => state.cart.cartTotal)
+  useEffect(() => dispatch(getTotal()), [cart, dispatch, cartTotal])
+
+
+  const handleOrder = () => {
+    dispatch(addNewOrder(cart))
+  }
+
+
+
   return (
     <div className="card mt-5 mb-2 ">
       <div className="row">
@@ -15,81 +31,10 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <div className="row border-top border-bottom">
-            <div className="row main align-items-center">
-              <div className="col-2">
-                <img
-                  className="img-fluid"
-                  src="https://demo.egenslab.com/html/eg-shop-grocery/assets/images/products/straw.png"
-                />
-              </div>
-              <div className="col">
-                <div className="row text-muted">Fresh Vegetables</div>
-                <div className="row">Food-1</div>
-              </div>
-              <div className="col">
-                {" "}
-                <a href="#">-</a>
-                <a href="#" className="border">
-                  1
-                </a>
-                <a href="#">+</a>{" "}
-              </div>
-              <div className="col">
-                $ 44.00 <button className="btn btn-danger">Delete</button>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="row main align-items-center">
-              <div className="col-2">
-                <img
-                  className="img-fluid"
-                  src="https://demo.egenslab.com/html/eg-shop-grocery/assets/images/products/product-sm4.png"
-                />
-              </div>
-              <div className="col">
-                <div className="row text-muted">Fresh Vegetable</div>
-                <div className="row">Food-2</div>
-              </div>
-              <div className="col">
-                {" "}
-                <a href="#">-</a>
-                <a href="#" className="">
-                  1
-                </a>
-                <a href="#">+</a>{" "}
-              </div>
-              <div className="col">
-                $ 44.00 <button className="btn btn-danger">Delete</button>
-              </div>
-            </div>
-          </div>
-          <div className="row border-top border-bottom">
-            <div className="row main align-items-center">
-              <div className="col-2">
-                <img
-                  className="img-fluid"
-                  src="https://demo.egenslab.com/html/eg-shop-grocery/assets/images/products/mango.png"
-                />
-              </div>
-              <div className="col">
-                <div className="row text-muted">Fresh Vegetable</div>
-                <div className="row">Food-3</div>
-              </div>
-              <div className="col">
-                {" "}
-                <a href="#">-</a>
-                <a href="#" className="border">
-                  1
-                </a>
-                <a href="#">+</a>{" "}
-              </div>
-              <div className="col">
-                $ 44.00 <button className="btn btn-danger">Delete</button>
-              </div>
-            </div>
-          </div>
+          {
+            cart.map(item => <SingleCartProduct key={item.id} item={item}></SingleCartProduct>)
+          }
+
         </div>
         <div className="col-md-4 summary">
           <div>
@@ -103,7 +48,7 @@ const Cart = () => {
             <select>
               <option className="text-muted">Standard-Delivery- $5.00</option>
             </select>
-            <p className="text-start">CUPON CODE</p>{" "}
+            <p className="text-start">COUPON CODE</p>{" "}
             <input id="code" placeholder="Enter your code" />
           </form>
           <div
@@ -114,9 +59,9 @@ const Cart = () => {
             }}
           >
             <div className="col">TOTAL PRICE</div>
-            <div className="col text-right">$ 137.00</div>
+            <div className="col text-right">${cartTotal + 5}</div>
           </div>{" "}
-          <button className="btn">CHECKOUT</button>
+          <button className="btn" onClick={() => handleOrder()}>CHECKOUT</button>
         </div>
       </div>
     </div>

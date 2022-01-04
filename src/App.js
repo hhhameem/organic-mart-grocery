@@ -1,58 +1,65 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./components/Shared/Footer/Footer";
-import Home from "./components/Home/Home/Home";
-import Contactus from "./components/Home/Contactus/Contactus";
-import Support from "./components/Home/Support/Support";
-import Error from "./components/Shared/Error/Error";
-import Product from "./components/Home/Product/Product";
-import AddProduct from "./components/Home/AddProduct/AddProduct";
-import MakeAdmin from "./components/Home/MakeAdmin/MakeAdmin";
-import UserReview from "./components/Home/UserReview/UserReview";
-import Cart from "./components/Home/Cart/Cart";
+import Footer from './Components/Shared/Footer/Footer'
+import ContactUs from "./Components/Home/Contactus/Contactus";
+import Support from "./Components/Home/Support/Support";
+import Error from "./Components/Shared/Error/Error";
+import Product from "./Components/Home/Product/Product";
+import AddProduct from "./Components/Home/AddProduct/AddProduct";
+import MakeAdmin from "./Components/Home/MakeAdmin/MakeAdmin";
+import UserReview from "./Components/Home/UserReview/UserReview";
+import Cart from "./Components/Home/Cart/Cart";
+import AuthProvider from "./Components/Context/AuthProvider";
+import About from "./Components/Pages/About/About";
+import Login from "./Components/Pages/LoginPage/Login/Login ";
+import Registration from "./Components/Pages/LoginPage/Registration/Registration";
+import NavigationBar from "./Components/Pages/Shared/NavigationBar/NavigationBar";
+import Home from "./Components/Pages/Home/Home/Home";
+import DashboardHome from "./Components/Pages/Dashboard/DashboardHome/DashboardHome";
+import ManageAllOrders from "./Components/Pages/Dashboard/ManageAllOrders/ManageAllOrders";
+import AddProducts from "./Components/Pages/Dashboard/AddProducts/AddProducts";
+import ManageProducts from "./Components/Pages/Dashboard/ManageProducts/ManageProducts";
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Router>
+
+        <BrowserRouter>
+          <NavigationBar></NavigationBar>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Registration />} />
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/home" element={<Home />}></Route>
+
             <Route exact path="/footer" element={<Footer />} />
-            <Route path="/contactus" element={<Contactus />} />
+            <Route path="/contactus" element={<ContactUs />} />
             <Route path="/support" element={<Support />} />
             <Route path="/product" element={<Product />} />
             <Route path="/addproduct" element={<AddProduct />} />
             <Route path="/makeadmin" element={<MakeAdmin />} />
             <Route path="/review" element={<UserReview />} />
-
-          <Route path="/cart" element={<Cart />} />
-
-          <Route path="*" element={<Error />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<Error />} />
+            {/* Dashboard */}
+            <Route path="/dashboard/" element={<DashboardHome />} >
+              <Route path="dashboard" element={<DashboardHome></DashboardHome>}></Route>
+              <Route path="myOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
+              <Route path="addProducts" element={<AddProducts></AddProducts>}></Route>
+              <Route path="manageAllOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
+              <Route path="manageProducts" element={<ManageProducts></ManageProducts>}></Route>
+              <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
+            </Route>
           </Routes>
-        </Router>
+          <Footer></Footer>
+        </BrowserRouter>
+
       </AuthProvider>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+
     </div>
   );
 }

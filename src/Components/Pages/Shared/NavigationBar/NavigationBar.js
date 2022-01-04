@@ -1,11 +1,13 @@
 import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import './NavigationBar.css';
 
 const NavigationBar = () => {
     const { user, logout } = useAuth();
+    const cart = useSelector(state => state.cart.cart)
 
     return (
         <>
@@ -21,12 +23,14 @@ const NavigationBar = () => {
                         {
                             user.email ?
                                 <div>
-                                    <Button onClick={logout} variant="light">Logout</Button>
+                                    <Nav.Link onClick={logout} variant="light">Logout</Nav.Link>
                                 </div>
                                 : <Nav.Link as={Link} to="/login">Login</Nav.Link>
                         }
+                        <Nav.Link as={Link} to="/cart"> <p><i className="fas fa-cart-arrow-down mt-3 text-secondary"></i>{cart.length}</p></Nav.Link>
+                        {user.email && <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>}
 
-                        <p><i className="fas fa-cart-arrow-down mt-3 text-secondary"></i></p>
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
