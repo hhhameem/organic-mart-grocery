@@ -45,7 +45,7 @@ export const deleteOrder = createAsyncThunk(
   "orders/deleteOrder",
   async (id) => {
     return await fetch(
-      `https://polar-savannah-40370.herokuapp.com/dashboard/orders/${id}`,
+      `https://sheltered-caverns-74517.herokuapp.com/orders/${id}`,
       {
         method: "DELETE",
       }
@@ -68,7 +68,7 @@ export const updateOrderStatus = createAsyncThunk(
   "orders/updateOrderStatus",
   async (id) => {
     return await fetch(
-      `https://polar-savannah-40370.herokuapp.com/dashboard/orders/${id}`,
+      `https://sheltered-caverns-74517.herokuapp.com/orders/${id}`,
       {
         method: "PUT",
         headers: {
