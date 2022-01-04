@@ -92,12 +92,15 @@ const useFirebase = () => {
       })
       .finally(() => {
         setIsLoading(false);
-        fetch(`http://localhost:5000/user?email=${email}`, {
-          method: "GET",
-          headers: {
-            "content-type": "application/json",
-          },
-        })
+        fetch(
+          `https://sheltered-caverns-74517.herokuapp.com/user?email=${email}`,
+          {
+            method: "GET",
+            headers: {
+              "content-type": "application/json",
+            },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             localStorage.setItem("userType", data.type);
@@ -120,7 +123,7 @@ const useFirebase = () => {
   }, [auth]);
 
   const saveUsersData = (email, name) => {
-    fetch("http://localhost:5000/user", {
+    fetch("https://sheltered-caverns-74517.herokuapp.com/user", {
       method: "POST",
       headers: {
         "content-type": "application/json",

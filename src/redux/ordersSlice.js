@@ -6,13 +6,16 @@ const axios = require("axios");
 export const addNewOrder = createAsyncThunk(
   "orders/addOrder",
   async (newOrder) => {
-    const response = await fetch("http://localhost:5000/order", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ newOrder }),
-    })
+    const response = await fetch(
+      "https://sheltered-caverns-74517.herokuapp.com/order",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ newOrder }),
+      }
+    )
       .then((res) => res.json())
 
       .then((data) => {
