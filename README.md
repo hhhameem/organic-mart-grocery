@@ -15,3 +15,6 @@ Full website responsive for desktops and mobile phones.
 There also contact us and about us page.
 
 Live Link: https://organic-mart-grocery.web.app/
+
+admin email: admin@admin.com
+pass: 123456
