@@ -1,7 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from './Components/Shared/Footer/Footer'
+import Footer from "./Components/Shared/Footer/Footer";
 import ContactUs from "./Components/Home/Contactus/Contactus";
 import Support from "./Components/Home/Support/Support";
 import Error from "./Components/Shared/Error/Error";
@@ -20,46 +20,100 @@ import DashboardHome from "./Components/Pages/Dashboard/DashboardHome/DashboardH
 import ManageAllOrders from "./Components/Pages/Dashboard/ManageAllOrders/ManageAllOrders";
 import AddProducts from "./Components/Pages/Dashboard/AddProducts/AddProducts";
 import ManageProducts from "./Components/Pages/Dashboard/ManageProducts/ManageProducts";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <AuthProvider>
-
         <BrowserRouter>
           <NavigationBar></NavigationBar>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
 
-            <Route path="/about" element={<About />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Registration />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Registration />} />
 
-            <Route exact path="/footer" element={<Footer />} />
-            <Route path="/contactus" element={<ContactUs />} />
-            <Route path="/support" element={<Support />} />
-            <Route path="/product" element={<Product />} />
-            <Route path="/addproduct" element={<AddProduct />} />
-            <Route path="/makeadmin" element={<MakeAdmin />} />
-            <Route path="/review" element={<UserReview />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="*" element={<Error />} />
+            <Route exact path='/footer' element={<Footer />} />
+            <Route path='/contactus' element={<ContactUs />} />
+            <Route path='/support' element={<Support />} />
+            <Route path='/product' element={<Product />} />
+            <Route path='/addproduct' element={<AddProduct />} />
+            <Route path='/makeadmin' element={<MakeAdmin />} />
+            <Route path='/review' element={<UserReview />} />
+            <Route
+              path='/cart'
+              element={
+                <PrivateRoute>
+                  <Cart />{" "}
+                </PrivateRoute>
+              }
+            />
+            <Route path='*' element={<Error />} />
             {/* Dashboard */}
-            <Route path="/dashboard/" element={<DashboardHome />} >
-              <Route path="dashboard" element={<DashboardHome></DashboardHome>}></Route>
-              <Route path="myOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
-              <Route path="addProducts" element={<AddProducts></AddProducts>}></Route>
-              <Route path="manageAllOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
-              <Route path="manageProducts" element={<ManageProducts></ManageProducts>}></Route>
-              <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
+            <Route
+              path='/dashboard/'
+              element={
+                <PrivateRoute>
+                  <DashboardHome />
+                </PrivateRoute>
+              }
+            >
+              <Route
+                path='dashboard'
+                element={
+                  <PrivateRoute>
+                    <DashboardHome />{" "}
+                  </PrivateRoute>
+                }
+              ></Route>
+              <Route
+                path='myOrders'
+                element={
+                  <PrivateRoute>
+                    <ManageAllOrders />
+                  </PrivateRoute>
+                }
+              ></Route>
+              <Route
+                path='addProducts'
+                element={
+                  <PrivateRoute>
+                    <AddProducts />
+                  </PrivateRoute>
+                }
+              ></Route>
+              <Route
+                path='manageAllOrders'
+                element={
+                  <PrivateRoute>
+                    <ManageAllOrders />
+                  </PrivateRoute>
+                }
+              ></Route>
+              <Route
+                path='manageProducts'
+                element={
+                  <PrivateRoute>
+                    <ManageProducts />
+                  </PrivateRoute>
+                }
+              ></Route>
+              <Route
+                path='makeAdmin'
+                element={
+                  <PrivateRoute>
+                    <MakeAdmin />
+                  </PrivateRoute>
+                }
+              ></Route>
             </Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
-
       </AuthProvider>
-
     </div>
   );
 }
